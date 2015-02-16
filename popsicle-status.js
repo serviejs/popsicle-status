@@ -1,7 +1,7 @@
 function popsicleStatus (lower, upper) {
   if (!arguments.length) {
     lower = 200;
-    upper = 299;
+    upper = 399;
   }
 
   return function (response) {
