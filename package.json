@@ -3,8 +3,15 @@
   "version": "0.0.2",
   "description": "Reject Popsicle responses on HTTP failure status codes",
   "main": "popsicle-status.js",
+  "files": [
+    "popsicle-status.js",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "istanbul cover _mocha -- -R spec"
+    "lint": "standard",
+    "test-spec": "mocha -R spec --bail",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+    "test": "npm run lint && npm run test-cov"
   },
   "repository": {
     "type": "git",
@@ -28,10 +35,12 @@
   },
   "homepage": "https://github.com/blakeembrey/popsicle-status",
   "devDependencies": {
-    "chai": "^1.10.0",
+    "chai": "^2.1.1",
     "istanbul": "^0.3.5",
     "mocha": "^2.0.1",
-    "nock": "^0.51.0",
-    "popsicle": "^0.1.1"
+    "nock": "^1.1.0",
+    "popsicle": "^0.4.0",
+    "pre-commit": "^1.0.6",
+    "standard": "^3.0.0-alpha"
   }
 }

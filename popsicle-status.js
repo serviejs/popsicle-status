@@ -1,18 +1,20 @@
+module.exports = popsicleStatus
+
 function popsicleStatus (lower, upper) {
   if (!arguments.length) {
-    lower = 200;
-    upper = 399;
+    lower = 200
+    upper = 399
   }
 
-  return function (response) {
-    if (response.status >= lower && response.status <= upper) {
-      return Promise.resolve(response);
-    }
+  return function (req) {
+    req.after(function (res) {
+      if (res.status >= lower && res.status <= upper) {
+        return Promise.resolve(res)
+      }
 
-    var err = response.error('Invalid HTTP status: ' + response.status);
-    err.status = response.status;
-    return Promise.reject(err);
-  };
+      var err = res.error('Invalid HTTP status: ' + res.status)
+      err.status = res.status
+      return Promise.reject(err)
+    })
+  }
 }
-
-module.exports = popsicleStatus;
