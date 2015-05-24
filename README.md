@@ -9,7 +9,7 @@ Reject responses on HTTP failure status codes (404, 500, etc).
 
 ## Installation
 
-```bash
+```
 npm install popsicle-status --save
 ```
 
