@@ -1,8 +1,11 @@
 module.exports = popsicleStatus
 
 function popsicleStatus (lower, upper) {
-  if (!arguments.length) {
+  if (lower == null) {
     lower = 200
+  }
+
+  if (upper == null) {
     upper = 399
   }
 
