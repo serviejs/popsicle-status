@@ -21,7 +21,17 @@ var status = require('popsicle-status')
 
 request('/users.json')
   .use(status())
+  .catch(function (error) {
+    console.log(error.type) //=> "EINVALIDSTATUS"
+    console.log(error.message) //=> "Invalid HTTP status, 404, should be between 200 and 399"
+    console.log(error.status) //=> 404
+    console.log(error.popsicle) //=> Popsicle#Request
+  })
 ```
+
+* **status()** Use default status codes (min: `200`, max: `399`)
+* **status(number)** Set the only valid HTTP status code
+* **status(number, number)** Set both the minimum and maximum HTTP status codes
 
 ## License
 
