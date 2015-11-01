@@ -36,11 +36,10 @@
   "homepage": "https://github.com/blakeembrey/popsicle-status",
   "devDependencies": {
     "chai": "^3.3.0",
-    "es6-promise": "^3.0.2",
     "istanbul": "^0.3.5",
     "mocha": "^2.0.1",
     "nock": "^2.13.0",
-    "popsicle": "^1.1.1",
+    "popsicle": "^1.2.1",
     "pre-commit": "^1.0.6",
     "standard": "^5.3.1"
   }

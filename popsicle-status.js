@@ -17,7 +17,7 @@ function popsicleStatus () {
   return function (req) {
     req.after(function (res) {
       if (res.status >= lower && res.status <= upper) {
-        return Promise.resolve(res)
+        return res
       }
 
       var message
@@ -28,9 +28,9 @@ function popsicleStatus () {
         message = 'should be between ' + lower + ' and ' + upper
       }
 
-      var err = res.error('Invalid HTTP status, ' + res.status + ', ' + message, 'EINVALIDSTATUS')
-      err.status = res.status
-      return Promise.reject(err)
+      var error = res.error('Invalid HTTP status, ' + res.status + ', ' + message, 'EINVALIDSTATUS')
+      error.status = res.status
+      throw error
     })
   }
 }
