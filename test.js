@@ -1,7 +1,5 @@
 /* global describe, it, beforeEach */
 
-require('es6-promise').polyfill()
-
 var popsicle = require('popsicle')
 var expect = require('chai').expect
 var nock = require('nock')
