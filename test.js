@@ -30,7 +30,7 @@ describe('popsicle status', function () {
           expect(err.status).to.equal(201)
           expect(err.popsicle).to.exist
           expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('Invalid HTTP status, 201, should be between 100 and 199')
+          expect(err.message).to.equal('http://example.com responded with 201, should be between 100 and 199')
         })
         .then(function () {
           expect(rejected).to.be.true
@@ -49,7 +49,7 @@ describe('popsicle status', function () {
           expect(err.status).to.equal(201)
           expect(err.popsicle).to.exist
           expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('Invalid HTTP status, 201, should equal 200')
+          expect(err.message).to.equal('http://example.com responded with 201, should be equal to 200')
         })
         .then(function () {
           expect(rejected).to.be.true
@@ -76,7 +76,7 @@ describe('popsicle status', function () {
           expect(err.status).to.equal(500)
           expect(err.popsicle).to.exist
           expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('Invalid HTTP status, 500, should be between 200 and 399')
+          expect(err.message).to.equal('http://example.com responded with 500, should be between 200 and 399')
         })
         .then(function () {
           expect(rejected).to.be.true
