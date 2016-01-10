@@ -37,10 +37,10 @@
   "devDependencies": {
     "bluebird": "^3.0.5",
     "chai": "^3.3.0",
-    "istanbul": "^0.3.5",
+    "istanbul": "^0.4.1",
     "mocha": "^2.0.1",
-    "nock": "^2.13.0",
-    "popsicle": "^1.2.1",
+    "nock": "^5.2.1",
+    "popsicle": "^3.0.0",
     "pre-commit": "^1.0.6",
     "standard": "^5.3.1"
   }

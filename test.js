@@ -14,14 +14,14 @@ describe('popsicle status', function () {
     })
 
     it('should resolve by default', function () {
-      return popsicle('http://example.com')
+      return popsicle.get('http://example.com')
         .use(status())
     })
 
     it('should reject outside of bounds', function () {
       var rejected = false
 
-      return popsicle('http://example.com')
+      return popsicle.get('http://example.com')
         .use(status(100, 199))
         .catch(function (err) {
           rejected = true
@@ -29,8 +29,8 @@ describe('popsicle status', function () {
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(201)
           expect(err.popsicle).to.exist
-          expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('http://example.com responded with 201, should be between 100 and 199')
+          expect(err.code).to.equal('EINVALIDSTATUS')
+          expect(err.message).to.equal('http://example.com/ responded with 201, expected it to be between 100 and 199')
         })
         .then(function () {
           expect(rejected).to.be.true
@@ -40,7 +40,7 @@ describe('popsicle status', function () {
     it('should allow exact matches', function () {
       var rejected = false
 
-      return popsicle('http://example.com')
+      return popsicle.get('http://example.com')
         .use(status(200))
         .catch(function (err) {
           rejected = true
@@ -48,8 +48,8 @@ describe('popsicle status', function () {
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(201)
           expect(err.popsicle).to.exist
-          expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('http://example.com responded with 201, should be equal to 200')
+          expect(err.code).to.equal('EINVALIDSTATUS')
+          expect(err.message).to.equal('http://example.com/ responded with 201, expected it to equal 200')
         })
         .then(function () {
           expect(rejected).to.be.true
@@ -67,7 +67,7 @@ describe('popsicle status', function () {
     it('should reject by default', function () {
       var rejected = false
 
-      return popsicle('http://example.com')
+      return popsicle.get('http://example.com')
         .use(status())
         .catch(function (err) {
           rejected = true
@@ -75,8 +75,8 @@ describe('popsicle status', function () {
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(500)
           expect(err.popsicle).to.exist
-          expect(err.type).to.equal('EINVALIDSTATUS')
-          expect(err.message).to.equal('http://example.com responded with 500, should be between 200 and 399')
+          expect(err.code).to.equal('EINVALIDSTATUS')
+          expect(err.message).to.equal('http://example.com/ responded with 500, expected it to be between 200 and 399')
         })
         .then(function () {
           expect(rejected).to.be.true
@@ -84,7 +84,7 @@ describe('popsicle status', function () {
     })
 
     it('should accept when within range', function () {
-      return popsicle('http://example.com')
+      return popsicle.get('http://example.com')
         .use(status(200, 599))
     })
   })

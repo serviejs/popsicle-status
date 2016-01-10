@@ -23,12 +23,12 @@ function popsicleStatus () {
       var message
 
       if (lower === upper) {
-        message = 'should be equal to ' + upper
+        message = 'equal ' + upper
       } else {
-        message = 'should be between ' + lower + ' and ' + upper
+        message = 'be between ' + lower + ' and ' + upper
       }
 
-      var error = res.error(req.fullUrl() + ' responded with ' + res.status + ', ' + message, 'EINVALIDSTATUS')
+      var error = res.error(req.url + ' responded with ' + res.status + ', expected it to ' + message, 'EINVALIDSTATUS')
       error.status = res.status
       throw error
     })
