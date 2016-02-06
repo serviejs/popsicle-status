@@ -1,6 +1,6 @@
 {
   "name": "popsicle-status",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reject Popsicle responses on HTTP failure status codes",
   "main": "popsicle-status.js",
   "typings": "popsicle-status.d.ts",
