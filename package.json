@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Reject Popsicle responses on HTTP failure status codes",
   "main": "popsicle-status.js",
+  "typings": "popsicle-status.d.ts",
   "files": [
     "popsicle-status.js",
+    "popsicle-status.d.ts",
     "LICENSE"
   ],
   "scripts": {

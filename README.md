@@ -33,6 +33,10 @@ request('/users.json')
 * **status(number)** Set the only valid HTTP status code
 * **status(number, number)** Set both the minimum and maximum HTTP status codes
 
+## TypeScript
+
+Includes a [type definition](popsicle-status.d.ts) for TypeScript.
+
 ## License
 
 MIT
