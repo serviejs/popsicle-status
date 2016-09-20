@@ -25,6 +25,7 @@ request('/users.json')
     console.log(error.type) //=> "EINVALIDSTATUS"
     console.log(error.message) //=> "Invalid HTTP status, 404, should be between 200 and 399"
     console.log(error.status) //=> 404
+    console.log(error.body) //=> `{"possiblyInformativeMessage":"here's why the request failed"}`
     console.log(error.popsicle) //=> Popsicle#Request
   })
 ```
