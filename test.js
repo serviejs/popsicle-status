@@ -87,5 +87,13 @@ describe('popsicle status', function () {
       return popsicle.get('http://example.com')
         .use(status(200, 599))
     })
+
+    it('should pass the response body along', function () {
+      return popsicle.get('http://example.com')
+        .use(status())
+        .catch(function (err) {
+          expect(err.body).to.exist
+        })
+    })
   })
 })
