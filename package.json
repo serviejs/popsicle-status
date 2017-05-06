@@ -40,9 +40,9 @@
     "bluebird": "^3.0.5",
     "chai": "^3.3.0",
     "istanbul": "^0.4.1",
-    "mocha": "^2.0.1",
-    "nock": "^8.0.0",
-    "popsicle": "^6.0.0",
-    "standard": "^7.0.1"
+    "mocha": "^3.3.0",
+    "nock": "^9.0.13",
+    "popsicle": "^9.1.0",
+    "standard": "^10.0.2"
   }
 }
