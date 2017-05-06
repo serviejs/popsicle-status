@@ -28,12 +28,12 @@ describe('popsicle status', function () {
 
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(201)
-          expect(err.popsicle).to.exist
+          expect(err.popsicle).to.not.equal(undefined)
           expect(err.code).to.equal('EINVALIDSTATUS')
           expect(err.message).to.equal('http://example.com/ responded with 201, expected it to be between 100 and 199')
         })
         .then(function () {
-          expect(rejected).to.be.true
+          expect(rejected).to.equal(true)
         })
     })
 
@@ -47,12 +47,12 @@ describe('popsicle status', function () {
 
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(201)
-          expect(err.popsicle).to.exist
+          expect(err.popsicle).to.not.equal(undefined)
           expect(err.code).to.equal('EINVALIDSTATUS')
           expect(err.message).to.equal('http://example.com/ responded with 201, expected it to equal 200')
         })
         .then(function () {
-          expect(rejected).to.be.true
+          expect(rejected).to.equal(true)
         })
     })
   })
@@ -74,12 +74,12 @@ describe('popsicle status', function () {
 
           expect(err).to.be.an.instanceOf(Error)
           expect(err.status).to.equal(500)
-          expect(err.popsicle).to.exist
+          expect(err.popsicle).to.not.equal(undefined)
           expect(err.code).to.equal('EINVALIDSTATUS')
           expect(err.message).to.equal('http://example.com/ responded with 500, expected it to be between 200 and 399')
         })
         .then(function () {
-          expect(rejected).to.be.true
+          expect(rejected).to.equal(true)
         })
     })
 
