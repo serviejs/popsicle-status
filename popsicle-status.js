@@ -30,6 +30,7 @@ function popsicleStatus () {
 
       var error = req.error(req.url + ' responded with ' + res.status + ', expected it to ' + message, 'EINVALIDSTATUS')
       error.status = res.status
+      error.res = res
       throw error
     })
   }
