@@ -77,6 +77,7 @@ describe('popsicle status', function () {
           expect(err.popsicle).to.not.equal(undefined)
           expect(err.code).to.equal('EINVALIDSTATUS')
           expect(err.message).to.equal('http://example.com/ responded with 500, expected it to be between 200 and 399')
+          expect(err.res).to.not.equal(undefined)
         })
         .then(function () {
           expect(rejected).to.equal(true)
