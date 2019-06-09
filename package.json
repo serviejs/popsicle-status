@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/blakeembrey/popsicle-status.git"
+    "url": "git://github.com/serviejs/popsicle-status.git"
   },
   "keywords": [
     "popsicle",
@@ -35,9 +35,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blakeembrey/popsicle-status/issues"
+    "url": "https://github.com/serviejs/popsicle-status/issues"
   },
-  "homepage": "https://github.com/blakeembrey/popsicle-status",
+  "homepage": "https://github.com/serviejs/popsicle-status",
   "size-limit": [
     {
       "path": "./dist/index.js",

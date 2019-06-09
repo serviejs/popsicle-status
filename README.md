@@ -39,7 +39,7 @@ MIT
 [npm-url]: https://npmjs.org/package/popsicle-status
 [downloads-image]: https://img.shields.io/npm/dm/popsicle-status.svg?style=flat
 [downloads-url]: https://npmjs.org/package/popsicle-status
-[travis-image]: https://img.shields.io/travis/blakeembrey/popsicle-status.svg?style=flat
-[travis-url]: https://travis-ci.org/blakeembrey/popsicle-status
-[coveralls-image]: https://img.shields.io/coveralls/blakeembrey/popsicle-status.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/blakeembrey/popsicle-status?branch=master
+[travis-image]: https://img.shields.io/travis/serviejs/popsicle-status.svg?style=flat
+[travis-url]: https://travis-ci.org/serviejs/popsicle-status
+[coveralls-image]: https://img.shields.io/coveralls/serviejs/popsicle-status.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/serviejs/popsicle-status?branch=master
