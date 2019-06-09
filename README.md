@@ -1,13 +1,11 @@
 # Popsicle Status
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/popsicle-status.svg)](https://greenkeeper.io/)
-
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-Reject responses on HTTP failure status codes (404, 500, etc).
+Popsicle middleware for rejecting responses with bad HTTP statuses.
 
 ## Installation
 
@@ -17,27 +15,21 @@ npm install popsicle-status --save
 
 ## Usage
 
-```javascript
-var request = require('popsicle')
-var status = require('popsicle-status')
+```js
+import { status } from "popsicle-status";
 
-request('/users.json')
-  .use(status())
-  .catch(function (error) {
-    console.log(error.type) //=> "EINVALIDSTATUS"
-    console.log(error.message) //=> "Invalid HTTP status, 404, should be between 200 and 399"
-    console.log(error.status) //=> 404
-    console.log(error.popsicle) //=> Popsicle#Request
-  })
+const middleware = status();
+
+const res = await middleware(req, send);
 ```
 
-* **status()** Use default status codes (min: `200`, max: `399`)
-* **status(number)** Set the only valid HTTP status code
-* **status(number, number)** Set both the minimum and maximum HTTP status codes
+### **status(min?: number, max?: number)**
+
+Default status codes of min `200` (inclusive) and max `400` (exclusive).
 
 ## TypeScript
 
-Includes a [type definition](popsicle-status.d.ts) for TypeScript.
+This project is written using [TypeScript](https://github.com/Microsoft/TypeScript) and publishes the definitions directly to NPM.
 
 ## License
 
