@@ -1,6 +1,6 @@
 {
   "name": "popsicle-status",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Popsicle middleware for rejecting responses with bad HTTP statuses",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
